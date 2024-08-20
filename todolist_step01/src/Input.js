@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import axios from "axios";
 const serverURL = 'http://localhost:5000/todo';
-const Input = ({todoList, setTodoList}) => {
+const Input = ({setTodoList}) => {
     const [inputTitle, setInputTitle] = useState("");
 
     // hook can't be included to callback functions.

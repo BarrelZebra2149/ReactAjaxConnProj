@@ -7,7 +7,6 @@ import axios from "axios";
 const App = ()=>{
     const [name, setName] = useState("Todo List");
     const [todoList, setTodoList] = useState([]);
-    const [noCnt, setNoCnt] = useState(105);
 
     useEffect(() => {
         axios.get('http://localhost:5000/todo').then(function (response) {
@@ -17,7 +16,7 @@ const App = ()=>{
 
     return (<div className="todoList">
         <div className="App-header"><h1>{name} App</h1> </div>
-        <Input todoList={todoList} setTodoList={setTodoList} noCnt={noCnt} setNoCnt={setNoCnt}/>
+        <Input setTodoList={setTodoList}/>
         <Output todoList={todoList} setTodoList={setTodoList}/>
     </div>);
 }

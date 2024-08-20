@@ -45,7 +45,7 @@ serverApp.put('/todo', (req, res) => {
     res.send(todoList);
 });
 serverApp.delete('/todo', (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
     let curNo = parseInt(req.body.no);
     const idx = todoList.findIndex((item) => {
         return item.no === curNo;

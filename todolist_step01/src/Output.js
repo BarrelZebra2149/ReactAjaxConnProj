@@ -16,7 +16,7 @@ const Output = ({todoList, setTodoList}) => {
                     {todoList.map((item)=> {
                         return(<tr key={item.no}>
                             <td colSpan={3} style={{padding:"0px"}}>
-                                <ItemRow todoList={todoList} setTodoList={setTodoList} item={item} />
+                                <ItemRow setTodoList={setTodoList} item={item} />
                             </td>
                         </tr>)
                     })}

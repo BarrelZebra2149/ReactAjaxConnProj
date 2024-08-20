@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 const serverURL = 'http://localhost:5000/todo';
 
-const ItemRow = ({todoList, setTodoList, item})=>{
+const ItemRow = ({setTodoList, item})=>{
     const [flag, setFlag] = useState(false);
     const [outputTitle, setOutputTitle] = useState(item.title);
     const lineThroughClass = {textDecoration:"line-through", color:"blue"}
