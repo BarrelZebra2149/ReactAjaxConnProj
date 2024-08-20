@@ -6,18 +6,21 @@ const bodyParser = require('body-parser');
 
 serverApp.set('port', 5000);
 
-// static 미들 웨어
+// static middle ware
 serverApp.use('/', express.static("public"));
-// URL 또는 포트가 다른 클라이언트 요청 허용
+
+// this allows other clients to access
 serverApp.use(cors());
 serverApp.use(bodyParser.urlencoded({ extended: false }));
 serverApp.use(bodyParser.json());
 
-// 데이터 임시 저장 배열
-const todoList = [{no:101, title:"공부하기(서버)", done: false},
-    {no:102, title:"자바하기(서버)", done: true},
-    {no:103, title:"리액트하기(서버)", done: false},
-    {no:104, title:"스프링하기(서버)", done: false}];
+// data array
+const todoList = [
+    {no:101, title:"do study", done: false},
+    {no:102, title:"do java task", done: true},
+    {no:103, title:"do react task", done: false},
+    {no:104, title:"do spring task", done: false}
+];
 let noCnt = 105;
 
 //get todoList
@@ -53,6 +56,7 @@ serverApp.delete('/todo', (req, res) => {
     res.send(todoList);
 });
 
+// check if server is working
 const server = http.createServer(serverApp);
 server.listen(serverApp.get('port'), ()=>{
     console.log("server is working >>> http://localhost:"+serverApp.get('port'));
